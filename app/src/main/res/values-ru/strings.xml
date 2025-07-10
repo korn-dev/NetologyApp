@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name">НетологияAPP</string>
     <string name="hello_world">Хаюшки заюшки</string>
+    <string name="button_text_blyat">Блэт</string>
+    <string name="activity_avatar_desc">Аватар</string>
 </resources>
