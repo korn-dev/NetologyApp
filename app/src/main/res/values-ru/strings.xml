@@ -4,4 +4,6 @@
     <string name="hello_world">Хаюшки заюшки</string>
     <string name="button_text_blyat">Блэт</string>
     <string name="activity_avatar_desc">Аватар</string>
+    <string name="user_name">Юзер-Арбузер</string>
+    <string name="user_description">Персональная страница юзер-арбузера на просторах интернетов</string>
 </resources>

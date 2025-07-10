@@ -20,14 +20,32 @@
             android:background="#84FFFF"/>
 
     <TextView
-            android:id="@+id/helloWorld"
+            android:id="@+id/user_name"
+            android:text="@string/user_name"
+            app:layout_constraintStart_toEndOf="@id/user_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hello_world"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintBottom_toTopOf="@id/user_desc"
+            app:layout_constraintTop_toTopOf="@+id/user_icon"/>
+
+    <TextView
+            android:id="@+id/user_desc"
+            android:text="@string/user_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/user_name"
+            app:layout_constraintBottom_toBottomOf="@+id/user_icon"
+            app:layout_constraintStart_toEndOf="@+id/user_icon"
+            android:ellipsize="marquee"/>
+
+    <androidx.constraintlayout.widget.Group
+            android:id="@+id/header_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:constraint_referenced_ids="user_icon, user_name, user_desc"
+            />
+
 
     <com.google.android.material.button.MaterialButton
             android:id="@+id/button1"
@@ -39,6 +57,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:backgroundTint="#FF80AB"
             android:textColor="#3E3D3D"
+            android:layout_margin="6dp"
             />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
