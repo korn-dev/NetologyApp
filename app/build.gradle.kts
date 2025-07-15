@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "ru.korndev.netologyapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "ru.korndev.netologyapp"
