@@ -86,6 +86,7 @@
         app:layout_constraintTop_toBottomOf="@id/text_field" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_newpost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
@@ -166,5 +167,37 @@
         app:layout_constraintBottom_toBottomOf="@+id/view_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view_button" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputfield"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="@string/input_text"
+        app:layout_constraintTop_toBottomOf="@id/share_button">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/savecalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputfield" />
+
+
+    <TextView
+        android:id="@+id/textcalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dgsdfgsdfhsdfhdfhsdfhsdfh"
+        android:layout_margin="20dp"
+        android:background="#00FF00"
+        app:layout_constraintTop_toBottomOf="@id/savecalc"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
