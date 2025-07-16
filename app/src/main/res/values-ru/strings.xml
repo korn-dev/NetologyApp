@@ -4,7 +4,14 @@
     <string name="hello_world">Хаюшки заюшки</string>
     <string name="button_text_blyat">Блэт</string>
     <string name="activity_avatar_desc">Аватар</string>
-    <string name="user_name">Юзер-Арбузер</string>
-    <string name="user_description">Персональная страница юзер-арбузера на просторах интернетов</string>
+    <string name="user_name">Юзер-Арбузер. Персональная страница юзер-арбузера на просторах интернетов</string>
+    <string name="post_datetime">01.01.2142 в 25:00</string>
     <string name="lorum">Ко́шка — домашнее животное, одно из наиболее популярных «животных-компаньонов». С точки зрения научной систематики, домашняя кошка — млекопитающее семейства кошачьих отряда хищных. Одни исследователи рассматривают домашнюю кошку как подвид дикой кошки, другие — как отдельный биологический вид.</string>
+    <string name="_123">123</string>
+    <string name="_666">666</string>
+    <string name="view_description">TODO</string>
+    <string name="fab_desc">Its FAB</string>
+    <string name="like_desc">TODO</string>
+    <string name="share_desc">TODO</string>
+    <string name="menu_option_desc">TODO</string>
 </resources>

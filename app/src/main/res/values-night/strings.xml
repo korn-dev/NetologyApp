@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="_123">123</string>
+    <string name="_666">666</string>
+    <string name="view_description">TODO</string>
+    <string name="fab_desc">Its FAB</string>
+    <string name="like_desc">TODO</string>
+    <string name="share_desc">TODO</string>
+    <string name="menu_option_desc">TODO</string>
+</resources>

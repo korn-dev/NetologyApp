@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#FFF9C4"
+    android:padding="8dp"
     android:visibility="visible"
     tools:context=".MainActivity">
 
@@ -12,51 +13,52 @@
         android:id="@+id/user_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/activity_avatar_desc"
-        android:src="@mipmap/ic_launcher_round"
-        android:layout_margin="8dp" app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/netology"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/user_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
         android:text="@string/user_name"
-
-        android:layout_margin="4dp" app:layout_constraintBottom_toTopOf="@id/user_desc"
-        app:layout_constraintStart_toEndOf="@id/user_icon"
-        app:layout_constraintTop_toTopOf="@+id/user_icon" />
+        app:layout_constraintEnd_toStartOf="@id/options_menu"
+        app:layout_constraintStart_toEndOf="@+id/user_icon"
+        app:layout_constraintTop_toTopOf="@+id/options_menu" />
 
     <TextView
         android:id="@+id/user_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:ellipsize="marquee"
-        android:text="@string/user_description"
-        app:layout_constraintBottom_toBottomOf="@+id/user_icon"
+        android:layout_marginStart="8dp"
+        android:text="@string/post_datetime"
         app:layout_constraintStart_toEndOf="@+id/user_icon"
         app:layout_constraintTop_toBottomOf="@+id/user_name" />
-
 
     <ImageButton
         android:id="@+id/options_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/baseline_keyboard_arrow_down_24"
-        app:layout_constraintBottom_toBottomOf="@id/user_desc"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="8dp"
-        app:layout_constraintTop_toTopOf="@+id/user_name"
-        android:background="@android:color/transparent"/>
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/menu_option_desc"
+        android:src="@drawable/outline_arrow_drop_down_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/header_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible"
-        app:constraint_referenced_ids="user_icon, user_name, user_desc" />
+        app:constraint_referenced_ids="user_icon, user_name, user_desc, options_menu" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier_header"
@@ -65,16 +67,15 @@
         app:barrierDirection="top"
         app:layout_constraintTop_toBottomOf="@id/user_icon" />
 
-
     <TextView
         android:id="@+id/text_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:textSize="16dp"
+        android:background="@drawable/rounded_corners"
         android:padding="6dp"
         android:text="@string/lorum"
-        android:background="@drawable/rounded_corners"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/barrier_header" />
 
     <androidx.constraintlayout.widget.Barrier
@@ -84,18 +85,21 @@
         app:barrierDirection="top"
         app:layout_constraintTop_toBottomOf="@id/text_field" />
 
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button1"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp"
-        android:backgroundTint="#FF80AB"
-        android:text="@string/button_text_blyat"
-        android:textColor="#3E3D3D"
+        android:layout_margin="12dp"
+        android:contentDescription="@string/fab_desc"
+        android:src="@drawable/pencil"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/button_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="like_button,like_text,share_button,share_text,view_button,view_text" />
 
     <ImageButton
         android:id="@+id/like_button"
@@ -103,7 +107,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/heart"
+        android:contentDescription="@string/like_desc"
+        android:src="@drawable/like"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barrier_aftertext" />
 
@@ -112,11 +117,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:text="123"
+        android:text="@string/_123"
         app:layout_constraintBottom_toBottomOf="@+id/like_button"
         app:layout_constraintStart_toEndOf="@id/like_button"
         app:layout_constraintTop_toTopOf="@+id/like_button" />
-
 
     <ImageButton
         android:id="@+id/share_button"
@@ -124,6 +128,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/share_desc"
         android:src="@drawable/share"
         app:layout_constraintStart_toEndOf="@id/like_text"
         app:layout_constraintTop_toBottomOf="@id/barrier_aftertext" />
@@ -133,7 +138,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:text="666"
+        android:text="@string/_666"
         app:layout_constraintBottom_toBottomOf="@+id/share_button"
         app:layout_constraintStart_toEndOf="@id/share_button"
         app:layout_constraintTop_toTopOf="@+id/share_button" />
@@ -144,7 +149,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/eye"
+        android:contentDescription="@string/view_description"
+        android:src="@drawable/view"
         app:layout_constraintEnd_toStartOf="@id/view_text"
         app:layout_constraintTop_toBottomOf="@id/barrier_aftertext" />
 
@@ -153,10 +159,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="666"
+        android:text="@string/_666"
         app:layout_constraintBottom_toBottomOf="@+id/view_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view_button" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
