@@ -110,7 +110,8 @@
         android:contentDescription="@string/like_desc"
         android:src="@drawable/like"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barrier_aftertext" />
+        app:layout_constraintTop_toBottomOf="@id/barrier_aftertext"
+        app:tint="@color/post_icon_color" />
 
     <TextView
         android:id="@+id/like_text"
@@ -131,7 +132,8 @@
         android:contentDescription="@string/share_desc"
         android:src="@drawable/share"
         app:layout_constraintStart_toEndOf="@id/like_text"
-        app:layout_constraintTop_toBottomOf="@id/barrier_aftertext" />
+        app:layout_constraintTop_toBottomOf="@id/barrier_aftertext"
+        app:tint="@color/post_icon_color" />
 
     <TextView
         android:id="@+id/share_text"
@@ -152,7 +154,8 @@
         android:contentDescription="@string/view_description"
         android:src="@drawable/view"
         app:layout_constraintEnd_toStartOf="@id/view_text"
-        app:layout_constraintTop_toBottomOf="@id/barrier_aftertext" />
+        app:layout_constraintTop_toBottomOf="@id/barrier_aftertext"
+        app:tint="@color/post_icon_color" />
 
     <TextView
         android:id="@+id/view_text"
