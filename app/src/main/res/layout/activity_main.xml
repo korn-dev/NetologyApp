@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#FFF9C4"
     android:padding="8dp"
     android:visibility="visible"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".activity.MainActivity">
 
     <ImageView
         android:id="@+id/user_icon"
@@ -168,19 +169,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view_button" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/inputfield"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:hint="@string/input_text"
-        app:layout_constraintTop_toBottomOf="@id/share_button">
+        app:layout_constraintTop_toBottomOf="@id/share_button"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/savecalc"
