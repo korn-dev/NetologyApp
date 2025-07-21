@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
             content = "Cat is pet",
             likes = 136,
             published = "32.01.2032 в 25:60",
+            shared = 269,
+            view = 666,
             likedByMe = true
         )
 

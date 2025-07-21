@@ -3,9 +3,10 @@ package ru.korndev.netologyapp.dto
 data class Post(
     val id: Long,
     val author: String,
-    val content: String,
     val published: String,
-    var likes: Int = 0,
+    val content: String,
+    val likes: Int,
+    val shared: Int,
+    val view: Int,
     var likedByMe: Boolean = false
-
 )
