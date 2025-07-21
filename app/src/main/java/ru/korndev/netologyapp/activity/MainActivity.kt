@@ -37,15 +37,17 @@ class MainActivity : AppCompatActivity() {
         )
 
         with(binding) {
-            var share = 0
-            val view = 666
-            var likeEnable = false
-            likeText.text = post.likes.toString()
+            userName.text = post.author
             userDesc.text = post.published
             textfield.text = post.content
-            shareText.text = "0"
-            viewText.text = view.toString()
-            textcalc.text = "Абра-кадабра!"
+            likeText.text = post.likes.toString()
+            shareText.text = post.shared.toString()
+            viewText.text = post.view.toString()
+            likeButton.imageTintList = if(post.likedByMe) ColorStateList.valueOf(Color.RED) else ColorStateList.valueOf(Color.GRAY)
+
+
+
+
             val editText: EditText = findViewById(R.id.inputfield)
             viewButton.imageTintList = ColorStateList.valueOf(Color.GRAY)
             shareButton.imageTintList = ColorStateList.valueOf(Color.GRAY)
@@ -59,14 +61,14 @@ class MainActivity : AppCompatActivity() {
             }
 
             likeButton.setOnClickListener {
-                if (likeEnable) {
+                if (post.likedByMe) {
                     post.likes = post.likes - 1
                     likeText.text = post.likes.toString()
-                    likeEnable = false
+                    post.likedByMe = false
                     likeButton.imageTintList = ColorStateList.valueOf(Color.GRAY)
                 } else {
                     post.likes = post.likes + 1
-                    likeEnable = true
+                    post.likedByMe = true
                     likeText.text = post.likes.toString()
                     likeButton.imageTintList = ColorStateList.valueOf(Color.RED)
                 }
@@ -74,8 +76,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             shareButton.setOnClickListener {
-                share++
-                share.toString().also { shareText.text = it }
+                post.shared++
+                post.shared.toString().also { shareText.text = it }
                 shareButton.imageTintList = ColorStateList.valueOf(
                     when (shareText.text.toString().toInt()) {
                         in 0..10 -> Color.BLUE
@@ -98,7 +100,7 @@ class MainActivity : AppCompatActivity() {
                         in 0..10 -> Color.BLUE
                         in 11..20 -> Color.RED
                         in 21..30 -> Color.GREEN
-                        else -> Color.GRAY
+                        else -> Color.TRANSPARENT
                     }
                 )
             }
