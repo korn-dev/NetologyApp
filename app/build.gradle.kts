@@ -14,6 +14,7 @@ android {
     defaultConfig {
         applicationId = "ru.korndev.netologyapp"
         minSdk = 26
+        //noinspection OldTargetApi
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
