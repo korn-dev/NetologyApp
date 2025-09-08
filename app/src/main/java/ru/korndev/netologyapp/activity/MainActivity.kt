@@ -11,7 +11,7 @@ import ru.korndev.netologyapp.R
 import ru.korndev.netologyapp.databinding.ActivityMainBinding
 import ru.korndev.netologyapp.dto.Post
 import ru.korndev.netologyapp.utils.Converter
-import kotlin.math.exp
+
 
 class MainActivity : AppCompatActivity() {
 
