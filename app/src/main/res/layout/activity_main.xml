@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF9C4"
+    android:background="#F8F8F8"
     android:padding="8dp"
     android:visibility="visible"
     android:fitsSystemWindows="true"
@@ -77,7 +77,8 @@
         android:padding="6dp"
         android:text="@string/lorum"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/barrier_header" />
+        app:layout_constraintTop_toBottomOf="@id/barrier_header"
+        tools:layout_editor_absoluteX="16dp" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier_aftertext"
@@ -191,14 +192,27 @@
         app:layout_constraintTop_toBottomOf="@id/inputfield" />
 
 
+    <Button
+        android:id="@+id/flashoff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/material_dynamic_neutral30"
+        android:visibility="invisible"
+        android:text="В.Ф.Д"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputfield" />
+
     <TextView
         android:id="@+id/textcalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/material_dynamic_neutral_variant95"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/savecalc" />
+        android:textSize="32dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
