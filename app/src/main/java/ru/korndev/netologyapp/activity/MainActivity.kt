@@ -3,6 +3,7 @@ package ru.korndev.netologyapp.activity
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log.e
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -43,9 +44,11 @@ class MainActivity : AppCompatActivity() {
             likeText.text = post.likes.toString()
             shareText.text = post.shared.toString()
             viewText.text = post.view.toString()
-            likeButton.imageTintList = if(post.likedByMe) ColorStateList.valueOf(Color.RED) else ColorStateList.valueOf(Color.GRAY)
-
-
+            likeButton.imageTintList =
+                if (post.likedByMe) ColorStateList.valueOf(Color.RED) else ColorStateList.valueOf(
+                    Color.GRAY
+                )
+            textcalc.backgroundTintList = ColorStateList.valueOf(Color.rgb(12,17,255))
 
 
             val editText: EditText = findViewById(R.id.inputfield)
@@ -90,19 +93,23 @@ class MainActivity : AppCompatActivity() {
 
 
             savecalc.setOnClickListener {
-                val inputText = editText.text.toString()
-                textcalc.text = Converter.Companion.converter(inputText.toInt())
-                editText.text.clear()
-                editText.clearFocus()
+                try {
+                    val inputText = editText.text.toString()
+                    textcalc.text = Converter.Companion.converter(inputText.toInt())
+                    editText.text.clear()
+                    editText.clearFocus()
 
-                textcalc.backgroundTintList = ColorStateList.valueOf(
-                    when (inputText.toInt()) {
-                        in 0..10 -> Color.BLUE
-                        in 11..20 -> Color.RED
-                        in 21..30 -> Color.GREEN
-                        else -> Color.TRANSPARENT
-                    }
-                )
+                    textcalc.backgroundTintList = ColorStateList.valueOf(
+                        when (inputText.toInt()) {
+                            in 0..10 -> Color.BLUE
+                            in 11..20 -> Color.RED
+                            in 21..30 -> Color.rgb(1,111,185)
+                            else -> Color.TRANSPARENT
+                        })
+                }
+                                catch (e: Exception) {
+                    textcalc.text = "Ты шо, охуел?!"
+                }
             }
         }
     }
