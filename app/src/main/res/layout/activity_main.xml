@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F8F8"
+    android:fitsSystemWindows="true"
     android:padding="8dp"
     android:visibility="visible"
-    android:fitsSystemWindows="true"
     tools:context=".activity.MainActivity">
 
     <ImageView
@@ -94,6 +94,7 @@
         android:layout_margin="12dp"
         android:contentDescription="@string/fab_desc"
         android:src="@drawable/pencil"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -170,49 +171,50 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view_button" />
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/test_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="input_like, input_share, input_view, save_calc" />
+
     <EditText
-        android:id="@+id/inputfield"
+        android:id="@+id/input_like"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:hint="@string/input_text"
-        app:layout_constraintTop_toBottomOf="@id/share_button"
+        android:hint="likes"
         android:inputType="number"
-        />
+        app:layout_constraintBottom_toTopOf="@id/save_calc"
+        tools:layout_editor_absoluteX="28dp" />
 
-
-    <Button
-        android:id="@+id/savecalc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SAVE"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputfield" />
-
-
-    <Button
-        android:id="@+id/flashoff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/material_dynamic_neutral30"
-        android:visibility="invisible"
-        android:text="В.Ф.Д"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputfield" />
-
-    <TextView
-        android:id="@+id/textcalc"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/input_share"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="@color/material_dynamic_neutral_variant95"
+        android:hint="share"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/input_like"
+        tools:layout_editor_absoluteX="28dp" />
+
+    <EditText
+        android:id="@+id/input_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="view"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/input_share"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <Button
+        android:id="@+id/save_calc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEST"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="32dp"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
